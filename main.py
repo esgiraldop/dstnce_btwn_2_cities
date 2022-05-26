@@ -27,7 +27,7 @@ phi_2 = lat2 * math.pi/180
 delta_phi = (lat2-lat1) * math.pi/180
 delta_lambda = (lon2-lon1) * math.pi/180
 
-a = math.sin(delta_phi/2)**2 + math.cos(phi_1) * math.cos(phi_2) * math.sin(delta_lambda/2)
+a = math.sin(delta_phi/2)**2 + math.cos(phi_1) * math.cos(phi_2) * math.sin(delta_lambda/2)**2
 c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
 d = round(6371000 * c * units[1], 2) # Meters is the default unit
 
