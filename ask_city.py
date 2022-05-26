@@ -1,14 +1,16 @@
 import pandas as pd
 
-def find_city(string):
-    cities_df = pd.read_csv('worldcities.csv')
-    subcities_df = pd.DataFrame()
+def intro():
     print('----------------------------')
     print('-------CITY FINDER----------')
     print('----------------------------')
     print('Welcome to the distance finder between two cities.\Please enter the name of two cities')
     print('We recommend not using special characters. If the program do not return any coincidence,')
     print('it will ask you to enter another city name')
+
+def find_city(string):
+    cities_df = pd.read_csv('worldcities.csv') # Database from --> https://simplemaps.com/data/world-cities
+    subcities_df = pd.DataFrame()
     while len(subcities_df) == 0:
         city = input(f'Please enter the {string} city: ').capitalize()
         subcities_df = cities_df[['city_ascii', 'lat', 'lng', 'country']][cities_df['city_ascii'] == city]
